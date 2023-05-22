@@ -1,0 +1,75 @@
+- topicUid: index
+  items: 
+  - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+  - topicUid: FailoverCapabilities
+- topicUid: Installation
+  items:
+  - topicUid: SystemRequirements
+  - topicUid: InstallTheAdapter
+  - topicUid: InstallUsingDocker
+  - topicUid: UpgradeTheAdapter
+  - topicUid: UninstallTheAdapter
+- topicUid: OPCUAConfiguration
+  items:
+  - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
+    items:
+    - topicUid: Secrets
+    - topicUid: ReferenceSecrets
+  - topicUid: ConfigurationTools
+  - topicUid: ClientFailoverConfiguration
+    items:
+    - topicUid: FailoverHealth
+  - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
+    items:
+    - topicUid: SystemAndAdapterConfiguration
+  - topicUid: AVEVAAdapterForOPCUADataSourceConfiguration
+  - topicUid: DiscoveryConfiguration
+    items:
+    - topicUid: DataSourceDiscovery
+  - topicUid: AVEVAAdapterForOPCUAClientSettingsConfiguration
+  - topicUid: HistoryRecovery
+    items:
+    - topicUid: OnDemandHistoryRecoveryConfiguration
+    - topicUid: AutomaticHistoryRecovery
+  - topicUid: AVEVAAdapterForOPCUADataSelectionConfiguration
+  - topicUid: DataFiltersConfiguration
+  - topicUid: GeneralConfiguration
+    items:
+    - topicUid: AdapterMetadata
+  - topicUid: BufferingConfiguration
+  - topicUid: LoggingConfiguration
+  - topicUid: EgressEndpointsConfiguration
+    items:
+    - topicUid: PrepareEgressDestinations
+    - topicUid: ConfigureANetworkProxy
+  - topicUid: HealthEndpointConfiguration 
+  - topicUid: AVEVAAdapterForOPCUAConfigurationExamples
+- topicUid: Administration
+  items:
+  - topicUid: StartAndStopAnAdapter
+  - topicUid: StartAndStopIngressComponent
+  - topicUid: DeleteAnAdapterComponent
+  - topicUid: RetrieveProductVersionInformation
+  - topicUid: RetrieveRedundancySet
+- topicUid: HealthAndDiagnostics
+  items:
+  - topicUid: AdapterHealth
+    items:
+    - topicUid: DeviceStatus
+    - topicUid: NextHealthMessageExpected
+  - topicUid: AdapterDiagnostics
+    items:
+    - topicUid: System
+    - topicUid: StreamCount
+    - topicUid: IORate
+    - topicUid: ErrorRate
+    - topicUid: EgressDiagnostics
+    - topicUid: FailoverStatus
+- topicUid: TroubleshootTheAdapter
+  items:
+  - topicUid: TroubleshootAVEVAAdapterForOPCUA
+- topicUid: ReleaseNotes
+  items:
+  - topicUid: ReleaseNotesOPCUA
+  - topicUid: ReleaseNotesOPCUAModule
+- topicUid: TechnicalSupportAndFeedback
