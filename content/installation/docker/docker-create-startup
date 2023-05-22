@@ -1,0 +1,46 @@
+---
+uid: DockerCreateStartupScript
+---
+
+# Create a startup script
+
+To create a startup script for the adapter, follow the instructions below.
+
+1. Use a text editor to create a script similar to one of the following examples:
+
+    **Note:** The script varies slightly by processor.
+
+    **ARM32**
+
+    ```bash
+    #!/bin/sh
+    if [ -z $portnum ] ; then
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host
+    else
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host --port:$portnum
+    fi
+    ```
+
+    **ARM64**
+
+    ```bash
+    #!/bin/sh
+    if [ -z $portnum ] ; then
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host
+    else
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host --port:$portnum
+    fi
+    ```
+
+    **AMD64**
+            
+    ```bash
+    #!/bin/sh
+    if [ -z $portnum ] ; then
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host
+    else
+        exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host --port:$portnum
+    fi
+    ```
+
+2. Name the script `opcuadockerstart.sh` and save it to the directory where you plan to create the container.

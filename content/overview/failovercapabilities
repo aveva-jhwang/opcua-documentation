@@ -10,6 +10,10 @@ The OPC UA adapter will use the ServiceLevel ranges defined in the OPC UA specif
 
 When an OPC UA server's ServiceLevel indicates maintenance, the adapter will disconnect and will wait until the server's EstimatedReturnTime before trying to reconnect. If the server does not provide the adapter with an EstimatedReturnTime, then the adapter will increase the ReconnectDelay by doubling the value configured in the client settings configuration.
 
+<br>
+<br>
+<hr style="border:2px solid gray">
+
 ## Server Failover
 The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the  `ServerFailoverEnabled`  property in the adapter component's DataSource must be set to  `true`. For more information on setting this property, see  [PI Adapter for OPC UA data source configuration](https://docs.aveva.com/bundle/aveva-adapter-opc-ua/page/configuration/data-source.html#opc-ua-data-source-parameters).
 
@@ -26,10 +30,10 @@ Upon successful connection to the primary OPC UA Server that is defined in the D
 ### Supported Server-level Redundancy Modes
 The following sections outline how the adapter behaves in each Server Redundancy Mode. For more information on server redundancy, see the [OPC UA Online Reference part 4 - 6.6.2](https://reference.opcfoundation.org/v104/Core/docs/Part4/6.6.2/)
 
-#### None
+#### **None**
 If the Server Redundancy Mode Support value on the primary OPC UA server is `None`, the adapter will operate as if server failover is not enabled. The adapter will not attempt to connect or failover to any backup servers.
 
-#### Cold
+#### **Cold**
 If the servers in the redundancy set are operating in Cold mode, the adapter will take the following steps upon startup:
 
 -   Make a connection to each server defined in the primary OPC UA server's Server URI Array.
@@ -40,7 +44,7 @@ The adapter will only maintain a connection with a single OPC UA server after it
 
 In Cold server failover, a failover only occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops to 1 or 0. When this occurs, the adapter will connect to all secondary servers, read the service level of each, then disconnect from all servers except for the one with the highest service level. The adapter will maintain a connection with this new server until another failover event occurs.
 
-#### Warm
+#### **Warm**
 If the servers in the redundancy set are operating in Warm mode, the adapter will take the following steps upon startup:
 
 -   Make a connection to each server defined in the primary OPC UA server's Server URI Array.
@@ -52,7 +56,7 @@ The adapter will maintain a connection to every OPC UA server in the redundancy 
 
 In Warm server failover, a failover occurs if the adapter loses connection to the primary server or if the primary server's Service Level drops below 200. When this occurs, the server is eligible for failover. Whenever any of the secondary servers have a higher service level than the current primary, a failover will occur. At this point, the adapter will disable publishing and sampling on the current primary server and enable them on whichever secondary server has the highest service level. This healthy server becomes the new primary.
 
-#### Hot
+#### **Hot**
 If the servers in the redundancy set are operating in Hot mode, the adapter will take the following steps upon startup:
 
 -   Make a connection to each server defined in the primary OPC UA server's Server URI Array.
@@ -71,16 +75,19 @@ On startup, when the adapter connects to the initial primary server and reads th
 -   Linux:  `/usr/share/OSIsoft/Adapters/OpcUa/Configuration/<ComponentId>_RedundantServerSet.json`
 
 On startup, if the adapter is unable to connect to the primary server defined in the Data Source configuration, it will attempt to connect to each server in the cached server redundancy set. If the adapter is able to connect to one of the cached servers, it will then read and use the redundancy set configured on that server. The current redundancy set configuration can be found by following the steps in the  [Retrieve Redundant Server Set](https://docs.aveva.com/bundle/aveva-adapter-opc-ua/page/main/shared-content/administration/server-redundancy-set.html)  section.
+<br>
+<br>
+<hr style="border:2px solid gray">
 
 ## Client Failover
 The OPC UA adapter also supports client failover. Two adapters can be configured as part of a redundant group, so that, in the event of a connection loss to the failover endpoint or data source, the secondary adapter may take the place of the primary. There are three client failover modes that the adapters can be configured to use: cold, warm and hot. These modes are detailed below. For more information about configuring client failover see [Client failover configuration](https://docs.aveva.com/bundle/aveva-adapter-opc-ua/page/configuration/client-settings.html).
 
 ### Supported Client-level Redundancy Modes
-#### Cold
+#### **Cold**
 If the adapters are operating in cold mode, the secondary adapter is configured but not started. Once a failover event occurs, the secondary will become primary and will then begin to collect and egress data.
 
-#### Warm
+#### **Warm**
 When the adapters are configured in warm mode, the component is started and connected to the data source, but it is not collecting or egressing any data. Once a failover event occurs, the secondary will become primary and begin to collect and egress data.
 
-#### Hot
+#### **Hot**
 In hot mode, both adapters are configured and started. They both collect and buffer data, but only the primary egresses data to the endpoint. When the secondary adapter becomes primary, it will send its buffered data to the endpoint.

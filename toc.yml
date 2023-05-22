@@ -1,21 +1,33 @@
 - topicUid: index
   items: 
-  - topicUid: AVEVAAdapterForOPCUAPrinciplesOfOperation
+  - topicUid: OpcUaPrinciplesOfOperation
   - topicUid: FailoverCapabilities
-- topicUid: Installation
+- topicUid: ReleaseNotes
   items:
-  - topicUid: SystemRequirements
-  - topicUid: InstallTheAdapter
-  - topicUid: InstallUsingDocker
-  - topicUid: UpgradeTheAdapter
-  - topicUid: UninstallTheAdapter
-- topicUid: OPCUAConfiguration
+  - topicUid: ReleaseNotesOPCUA
+  - topicUid: ReleaseNotesOPCUAModule
+- topicUid: BeforeGettingStarted
   items:
+  - topicUid: ConfigurationTools
   - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
     items:
     - topicUid: Secrets
     - topicUid: ReferenceSecrets
-  - topicUid: ConfigurationTools
+- topicUid: Installation
+  items:
+  - topicUid: SystemRequirements
+  - topicUid: InstallTheAdapter
+  - topicUid: UpgradeTheAdapter
+  - topicUid: UninstallTheAdapter
+  - topicUid: InstallUsingDocker
+    items:
+    - topicUid: DockerCreateStartupScript
+    - topicUid: DockerCreateContainer
+    - topicUid: DockerContainerStartup
+  - topicUid: DeploymentEdgeManagement
+
+- topicUid: OPCUAConfiguration
+  items:
   - topicUid: ClientFailoverConfiguration
     items:
     - topicUid: FailoverHealth
@@ -44,13 +56,6 @@
     - topicUid: ConfigureANetworkProxy
   - topicUid: HealthEndpointConfiguration 
   - topicUid: AVEVAAdapterForOPCUAConfigurationExamples
-- topicUid: Administration
-  items:
-  - topicUid: StartAndStopAnAdapter
-  - topicUid: StartAndStopIngressComponent
-  - topicUid: DeleteAnAdapterComponent
-  - topicUid: RetrieveProductVersionInformation
-  - topicUid: RetrieveRedundancySet
 - topicUid: HealthAndDiagnostics
   items:
   - topicUid: AdapterHealth
@@ -65,11 +70,14 @@
     - topicUid: ErrorRate
     - topicUid: EgressDiagnostics
     - topicUid: FailoverStatus
+- topicUid: Administration
+  items:
+  - topicUid: StartAndStopAnAdapter
+  - topicUid: StartAndStopIngressComponent
+  - topicUid: DeleteAnAdapterComponent
+  - topicUid: RetrieveProductVersionInformation
+  - topicUid: RetrieveRedundancySet
 - topicUid: TroubleshootTheAdapter
   items:
   - topicUid: TroubleshootAVEVAAdapterForOPCUA
-- topicUid: ReleaseNotes
-  items:
-  - topicUid: ReleaseNotesOPCUA
-  - topicUid: ReleaseNotesOPCUAModule
 - topicUid: TechnicalSupportAndFeedback
