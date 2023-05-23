@@ -8,6 +8,24 @@ AVEVA Adapter for OPC UA enables you to configure data source and data selection
 
 This section will be focused on helping you get started with one instance of the adapter. It can be configured with any programming language or tool that supports making REST calls, or with the Edge Command Utility. For more information on AVEVA Adapter configuration tools, see [Configuration tools](xref:ConfigurationTools).
 
+AVEVA Adapters use JSON configuration files in a protected directory on Windows and Linux to store configuration that is read on startup. While the files are accessible to view, AVEVA recommends that you use REST or the EdgeCmd utility for any changes you make to the files.
+
+As part of making adapters as secure as possible, any passwords or secrets that you configure are stored in encrypted form where cryptographic key material is stored separately in a secure location. If you edit the files directly, the adapter may not work as expected.
+
+**Note:** You can edit any single component or facet of the system individually using REST, but you can also configure the system as a whole with a single REST call.
+
 ## Quick start
 
 These steps guide you through setup of each configuration file available for AVEVA Adapter for OPC UA. As you complete each step, perform each required configuration to establish a data flow from a data source to one or more endpoints. Some configurations are optional.
+
+**Important:** It is imperative that you follow the order of steps you see below.
+
+1. Configure one or several OPC UA system components.
+2. Configure an OPC UA data source for each OPC UA device.
+3. **[Optional]** Configure client settings.
+4. **[Optional]** Perform data source discovery.
+5. Configure an OPC UA data selection for each OPC UA data source.
+6. **[Optional]** Configure data filters, security, diagnostics and metadata, buffering, and logging.
+7. Configure one or serveral egress and health endpoints.
+
+## Example of a full configuration file

@@ -25,9 +25,11 @@
     - topicUid: DockerCreateContainer
     - topicUid: DockerContainerStartup
   - topicUid: DeploymentEdgeManagement
-
 - topicUid: OPCUAConfiguration
   items:
+  - topicUid: OpcUaSystemComponentConfig
+  
+
   - topicUid: ClientFailoverConfiguration
     items:
     - topicUid: FailoverHealth
