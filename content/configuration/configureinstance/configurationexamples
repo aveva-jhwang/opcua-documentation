@@ -10,7 +10,7 @@ The following tables provide examples for all configurations available for AVEVA
 
 <hr style="border:2px solid gray">
 
-## OPC UA adapter - Full configuration
+## OPC UA adapter - Full configuration example
 
 ```json
 {
