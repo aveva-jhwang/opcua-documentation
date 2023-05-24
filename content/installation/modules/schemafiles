@@ -1,0 +1,19 @@
+---
+uid: OpcUaSchemas
+---
+
+# Schema files
+
+When using Edge Management to deploy adapters onto remotely located devices... <!-- add info about schema file usage -->
+
+Full schema definitions for different facets of each component are available in one of the following folders:
+
+**Windows**
+```bash
+%ProgramFiles%\OSIsoft\Adapters\<AdapterName>\Schemas
+```
+
+**Linux**
+```bash
+/opt/OSIsoft/Adapters/<AdapterName>/Schemas
+```

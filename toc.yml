@@ -28,11 +28,25 @@
 - topicUid: OPCUAConfiguration
   items:
   - topicUid: OpcUaSystemComponentConfig
-  
-
+  - topicUid: OpcUaDataSourceConfig
+  - topicUid: OpcUaClientSettingsConfig
+  - topicUid: OpcUaDiscoveryConfig
+  - topicUid: OpcUaDataFiltersConfig
+  - topicUid: OpcUaBuffering
+  - topicUid: OpcUaHistoryRecovery
+  items:
+    - topicUid: OnDemandHistoryRecoveryConfig
+    - topicUid: AutoHistoryRecoveryConfig
+  - topicUid: OpcUaEgressEndpointsConfig
+- topicUid: ConfigureAdapterFailover
+  items:
+  - topicUid: OpcUaServerFailoverConfig
   - topicUid: ClientFailoverConfiguration
     items:
     - topicUid: FailoverHealth
+
+
+    
   - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration
     items:
     - topicUid: SystemAndAdapterConfiguration
